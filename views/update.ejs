@@ -1,0 +1,448 @@
+<%- include('./partials/navbar') %>
+
+    <div class="container p-5 yoo">
+
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Update name
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+
+                    <form class="needs-validation" action="/update/name" method="post" enctype="multipart/form-data" novalidate>
+
+                        <div class="row g-3">
+                          <div class="col-sm-6">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" name="updateterm" class="form-control" id="name" placeholder="Enter Your name" value="" required>
+                            <div class="invalid-feedback">
+                              Valid name is required.
+                            </div>
+                          </div>
+
+                          <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+
+                          </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Update lastname
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+
+                  <form class="needs-validation" action="/update/lastname" method="post" enctype="multipart/form-data" novalidate>
+                    <div class="col-sm-6">
+                      <label for="lastName" class="form-label">Last name</label>
+                      <input type="text" name="updateterm" class="form-control" id="lastName" placeholder="Enter Your last name" value="" required>
+                      <div class="invalid-feedback">
+                        Valid last name is required.
+                  </div>
+                </div>
+                
+                          <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+                          
+                        </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Update username
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <form class="needs-validation" action="/update/username" method="post" enctype="multipart/form-data" novalidate>
+                    <div class="col-12">
+                      <label for="username" class="form-label">Username</label>
+                      <div class="input-group has-validation">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" name="updateterm" id="username" placeholder="Username" required>
+                      <div class="invalid-feedback">
+                        Your username is required.
+                        </div>
+                      </div>
+                    </div>
+                    <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingfour">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Update E-mail
+                </button>
+              </h2>
+              <div id="flush-collapsefour" class="accordion-collapse collapse" aria-labelledby="flush-headingfour" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+
+                  <form class="needs-validation" action="/update/email" method="post" enctype="multipart/form-data" novalidate>
+
+                    <div class="col-12">
+                      <label for="email" class="form-label">Email </span></label>
+                      <input type="email" class="form-control" required name="updateterm" id="email" placeholder="you@example.com">
+                      <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                      </div>
+                    </div>
+
+                    <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+                  </form>                  
+
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingfive">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefive" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Update year
+                </button>
+              </h2>
+              <div id="flush-collapsefive" class="accordion-collapse collapse" aria-labelledby="flush-headingfive" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+
+                  <form class="needs-validation" action="/update/year" method="post" enctype="multipart/form-data" novalidate>
+
+                    <div class="col-md-5">
+                      <label for="year" class="form-label">year</label>
+                      <select class="form-select" id="year" name="updateterm" required>
+                        <option value="">Choose...</option>
+                        <option>First</option>
+                        <option>Secound</option>
+                        <option>third</option>
+                        <option>forth</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please select a valid country.
+                      </div>
+                    </div>
+
+                    <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+                  </form>
+
+                </div>
+
+              </div>
+            </div>
+            
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingsix">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsesix" aria-expanded="false" aria-controls="flush-collapseThree">
+                  update branch
+                </button>
+              </h2>
+              <div id="flush-collapsesix" class="accordion-collapse collapse" aria-labelledby="flush-headingsix" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  
+                  <form class="needs-validation" action="/update/branch" method="post" enctype="multipart/form-data" novalidate>
+
+                    <div class="col-md-5">
+                      <label for="branch" class="form-label">Branch</label>
+                      <select class="form-select" id="branch" name="updateterm" required>
+                        <option value="">Choose...</option>
+                        <option>EC</option>
+                        <option>ET</option>
+                        <option>EE</option>
+                        <option>CS</option>
+                        <option>IT</option>
+                        <option>MECH</option>
+                        <option>MC</option>
+                        <option>IOT</option>
+                        <option>EE-IOT</option>
+                        <option>CIVIL</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please select a valid country.
+                      </div>
+                    </div>
+
+                    <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingseven">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseseven" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Update Sports
+                </button>
+              </h2>
+              <div id="flush-collapseseven" class="accordion-collapse collapse" aria-labelledby="flush-headingseven" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+
+                  <form class="needs-validation" action="/update/sports" method="post" enctype="multipart/form-data" novalidate>
+
+                    <div class="col-12">
+                      <label for="sports" class="form-label">sports</label>
+                      <br><small>Ex: athletics</small>
+                      
+                      <div class="ingridientslist">
+                        <div class="ingridientsdiv col-md-5 my-2 ">
+                          <select class="form-select" id="sports" name="updateterm" required>
+                            <option value="">Choose...</option>
+                              <option>SP1</option>
+                              <option>SP2</option>
+                              <option>SP3</option>
+                              <option>SP4</option>
+                              <option>SP5</option>
+                              <option>SP6</option>
+                              <option>SP7</option>
+                              <option>SP8</option>
+                              <option>SP9</option>
+                              <option>SP10</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a valid country.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <button class="btn btn-outline-primary" type="button" id="ingridientbtn">
+                        + Add sports
+                      </div>
+                    </button>
+
+                    <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+                  </form>
+                  
+                  
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingeight">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseeight" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Update Skills
+                </button>
+              </h2>
+              <div id="flush-collapseeight" class="accordion-collapse collapse" aria-labelledby="flush-headingeight" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  
+                  <form class="needs-validation" action="/update/skills" method="post" enctype="multipart/form-data" novalidate>
+
+                    <div class="col-12">
+                      <div class="ingridientslist1">
+                        <label for="skills" class="form-label">Skills</label>
+                        <div class="ingridientsdiv1 col-md-5 my-2 ">
+                          <select class="form-select" id="skills" name="updateterm" required>
+                            <option value="">Choose...</option>
+                              <option>SK1</option>
+                              <option>SK2</option>
+                              <option>SK3</option>
+                              <option>SK4</option>
+                              <option>SK5</option>
+                              <option>SK6</option>
+                              <option>SK7</option>
+                              <option>SK8</option>
+                              <option>SK9</option>
+                              <option>SK10</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a valid country.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-12">
+                      <button class="btn btn-outline-primary" type="button" id="ingridientbtn1">
+                        + Add skills
+                      </div>
+                    </button>
+
+                  <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+                  </form>
+                  
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingnine">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsenine" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Update Extra-Curricular Activities
+                </button>
+              </h2>
+              <div id="flush-collapsenine" class="accordion-collapse collapse" aria-labelledby="flush-headingnine" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  
+                  <form class="needs-validation" action="/update/extra" method="post" enctype="multipart/form-data" novalidate>
+                    
+                    <div class="col-12">
+                      <div class="ingridientslist2">
+                        <label for="extra" class="form-label">Extra Curricular</label>
+                        <div class="ingridientsdiv2 col-md-5 my-2 ">
+                          <select class="form-select" id="extra" name="updateterm" required>
+                            <option value="">Choose...</option>
+                              <option>EX2</option>
+                              <option>EX3</option>
+                              <option>EX4</option>
+                              <option>EX5</option>
+                              <option>EX6</option>
+                              <option>EX7</option>
+                              <option>EX8</option>
+                              <option>EX9</option>
+                              <option>EX10</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a valid country.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-12">
+                      <button class="btn btn-outline-primary" type="button" id="ingridientbtn2">
+                        + Add 
+                      </div>
+                    </button>
+
+                    <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+            
+            <!-- ---------------------------------------------------------- -->
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingten">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseten" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Update Clubs
+                </button>
+              </h2>
+              <div id="flush-collapseten" class="accordion-collapse collapse" aria-labelledby="flush-headingten" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  
+                  <form class="needs-validation" action="/update/clubs" method="post" enctype="multipart/form-data" novalidate>
+                    
+                    <div class="col-12">
+                      <div class="ingridientslist3">
+                        <label for="clubs" class="form-label">select the Clubs you are in</label>
+                        <div class="ingridientsdiv3 col-md-5 my-2 ">
+                          <select class="form-select" id="clubs" name="updateterm" required>
+                            <option value="">Choose...</option>
+                            <option>CLUB-1</option>
+                            <option>CLUB-2</option>
+                            <option>CLUB-3</option>
+                            <option>CLUB-4</option>
+                            <option>CLUB-5</option>
+                            <option>CLUB-6</option>
+                            <option>CLUB-7</option>
+                            <option>CLUB-8</option>
+                            <option>CLUB-9</option>
+                            <option>CLUB-10</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a valid country.
+                          </div>
+                        </div>
+                      </div>
+                    </div>   
+                    <div class="col-12">
+                      <button class="btn btn-outline-primary" type="button" id="ingridientbtn3">
+                        + Add 
+                      </button>
+                    </div>                
+
+                    <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+                  </form>
+                  
+                </div>
+              </div>
+            </div>
+            
+            <!-- ---------------------------------------------------------- -->
+            
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingeleven">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseeleven" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Update College
+                </button>
+              </h2>
+              <div id="flush-collapseeleven" class="accordion-collapse collapse" aria-labelledby="flush-headingeleven" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  
+                  <form class="needs-validation" action="/update/college" method="post" enctype="multipart/form-data" novalidate>
+                    
+                    <div class="col-md-5">
+                      <label for="college" class="form-label">college</label>
+                      <select class="form-select" id="college" name="updateterm" required>
+                        <option value="">Choose...</option>
+                        <option>MITS,gwalior</option>
+                        <option>TIT,indore</option>
+                        <option>LNCT,bhopal</option>
+                        <option>JUET,guna</option>
+                        <option>Oriental,bhopal</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please select a valid country.
+                      </div>
+                    </div>                   
+                    
+                    <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+                  </form>
+                  
+                </div>
+              </div>
+            </div>
+
+            <!-- ---------------------------------------------------------- -->
+
+            <!-- <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingten">
+                <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseten" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Update Password
+                </button>
+              </h2>
+              <div id="flush-collapseten" class="accordion-collapse collapse" aria-labelledby="flush-headingten" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+
+                  <form class="needs-validation" action="/update/password" method="post" enctype="multipart/form-data" novalidate>
+
+                    <div class="col-12">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" name="updateterm" placeholder="Enter Your Password" required>
+                      <div class="invalid-feedback">
+                        Enter Password
+                      </div>
+                    </div>                    
+
+                  <button class="w-20 btn btn-primary btn-md" type="submit">Update</button>
+                  </form>
+
+                </div>
+              </div>
+            </div> -->
+            
+          </div>
+
+    </div>
+    </div>

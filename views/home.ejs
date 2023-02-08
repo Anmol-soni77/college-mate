@@ -1,0 +1,113 @@
+
+  <%- include('./partials/navbar') %>
+
+  <div class="container my-5">
+            
+    <hr style="color:white;">
+    <h3>People of same year</h3>
+    <hr style="color:white;">
+        <div class="row align-items-center justify-content-center">
+            <% if(sameyear != "") { %>
+                <% for(const element of sameyear){  %>
+            <div class="col-6 col-sm-4 col-lg-3 card bg-dark text-light m-3" style="width: 18rem;">
+                <img src="./images/<%- element.image %>" class="card-img-top"  height="120px" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><%- element.name %></h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item bg-dark text-light ">An item</li>
+                  <li class="list-group-item bg-dark text-light ">A second item</li>
+                  <li class="list-group-item bg-dark text-light ">A third item</li>
+                </ul>
+                <div class="card-body">
+                    <a href= "/student/<%- element.username %>">View</a>
+                </div>
+              </div>
+              <% } %>
+        <% }else{ %>
+          <h4 class="text-danger">Your branch-mate Don't know about this web let them know</h4>
+          <% } %>
+
+          <% if(sameyear.length >= 3) { %>
+            <div class="row align-items-center justify-content-center">
+              <div class="col-3">
+                <button class="btn btn-sm btn-primary"><a class="dark text-light" href="/viewmore/year">view more</a></button>
+              </div>
+            </div>
+            <% } %>
+
+        </div>
+
+        <hr style="color:white;">
+        <h3>People of same Branch</h3>
+        <hr style="color:white;">
+
+        <div class="row align-items-center justify-content-center">
+            <% if(samebranch != "") { %>
+              <% for(const element of samebranch){  %>
+                <div class="col-6 col-sm-4 col-lg-3 card bg-dark text-light m-3" style="width: 18rem;">
+                  <img src="./images/<%- element.image %>" class="card-img-top"  height="120px" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><%- element.name %></h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-dark text-light ">An item</li>
+                  <li class="list-group-item bg-dark text-light ">A second item</li>
+                  <li class="list-group-item bg-dark text-light ">A third item</li>
+                </ul>
+                <div class="card-body">
+                    <a href="/student/<%- element.username %>">View</a>
+                </div>
+              </div>
+              <% } %>
+              <% }else{ %>
+                <h4 class="text-secondary">Your branch-mate Don't know about this web let them know</h4>
+                <% } %>
+                
+              </div>
+              
+              <% if(samebranch.length >= 3) { %>
+                <div class="row align-items-center justify-content-center">
+                  <div class="col-3">
+                    <button class="btn btn-sm btn-primary"><a class="dark text-light" href="/viewmore/branch">view more</a></button>
+                  </div>
+                </div>
+                <% } %>
+                
+                <hr style="color:white;">
+            <h3>Latest</h3>
+            <hr style="color:white;">
+
+            <div class="row align-items-center justify-content-center">
+                <% if(latest != "") { %>
+                    <% for(const element of latest){  %>
+                <div class="col-6 col-sm-4 col-lg-3 card bg-dark text-light m-3" style="width: 18rem;">
+                    <img src="./images/<%- element.image %>" class="card-img-top"  height="120px" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%- element.username %></h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item bg-dark text-light ">An item</li>
+                      <li class="list-group-item bg-dark text-light ">A second item</li>
+                      <li class="list-group-item bg-dark text-light ">A third item</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="/student/<%- element.username %>">View</a>
+                    </div>
+                  </div>
+                  <% } %>
+                  <% } %>
+
+                  <% if(latest.length >= 3) { %>
+                    <div class="row align-items-center justify-content-center">
+                      <div class="col-3">
+                        <button class="btn btn-sm btn-primary"><a class="dark text-light" href="/viewmore/latest">view more</a></button>
+                      </div>
+                    </div>
+                    <% } %>
+              
+            </div>
+</div>   
