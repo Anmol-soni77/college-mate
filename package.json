@@ -4,7 +4,7 @@
   "description": "This is api of an project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/app.js",
+    "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "anmol",
