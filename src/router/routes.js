@@ -132,10 +132,10 @@ router.post("/signup",async (req,res)=>{
         imageuploadfile = req.files.image
         newimagename = Date.now()+imageuploadfile.name;
 
-        uploadpath = require('path').resolve('../') + '/public/images/' + newimagename;
+        uploadpath = require('path').resolve('./') + '/public/images/' + newimagename;
 
         imageuploadfile.mv(uploadpath,function(err){
-            if(err) return res.status(500).send(err);
+            if(err) return res.status(500).send(`Error isssssssssssssss : ${err}`);
         })
 
         req.body.image = newimagename;
@@ -152,7 +152,7 @@ router.post("/signup",async (req,res)=>{
     } catch (err) {
         // res.send(err);
         res.render('login',{
-            content:""
+            content:err
         });
     }
 })
