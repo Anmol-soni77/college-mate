@@ -1,5 +1,6 @@
 const express = require("express")
-const router = express.Router()
+const router = express.Router();
+const path = require('path');
 const bcrypt = require("bcrypt");
 const client = require('../db/model');
 const auth = require('../middleware/authentication');
@@ -132,7 +133,9 @@ router.post("/signup",async (req,res)=>{
         imageuploadfile = req.files.image
         newimagename = Date.now()+imageuploadfile.name;
 
-        uploadpath = require('path').resolve('./') + '/tmp/temp/public/images/' + newimagename;
+        // uploadpath = require('path').resolve('./') + '/tmp/temp/public/images/' + newimagename;
+        // uploadpath = path.join(__dirname, '../../temp/public/images/' +  newimagename);        
+        uploadpath = path.join(__dirname, '../../tmp/' +  newimagename);        
 
         imageuploadfile.mv(uploadpath,function(err){
             if(err) return res.status(500).send(`Error isssssssssssssss : ${err}`);
@@ -152,7 +155,7 @@ router.post("/signup",async (req,res)=>{
     } catch (err) {
         // res.send(err);
         res.render('login',{
-            content:err
+            content:`Erroorrr is       : ${err}`
         });
     }
 })

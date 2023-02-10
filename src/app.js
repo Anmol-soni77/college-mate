@@ -35,7 +35,7 @@ app.use(expresslayouts);
 
 // PATH OF STATIC FOLDER 
 const staticpath = path.join(__dirname,"../public");
-const staticpath2 = path.join(__dirname,"../tmp");
+const staticpath2 = path.join(__dirname,"../temp");
 
 // USING EXPRESS.STATIC() FOR SERVING STATIC FILES
 app.use(express.static(staticpath));
