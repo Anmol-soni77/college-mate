@@ -35,9 +35,11 @@ app.use(expresslayouts);
 
 // PATH OF STATIC FOLDER 
 const staticpath = path.join(__dirname,"../public");
+const staticpath2 = path.join(__dirname,"../tmp");
 
 // USING EXPRESS.STATIC() FOR SERVING STATIC FILES
 app.use(express.static(staticpath));
+app.use(express.static(staticpath2));
 
 // SETTING VIEWS DIRECTORY AND VIEW ENGINE
 const viewpath = path.join(__dirname,"../views");
