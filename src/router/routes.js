@@ -135,7 +135,7 @@ router.post("/signup",async (req,res)=>{
 
         // uploadpath = require('path').resolve('./') + '/tmp/temp/public/images/' + newimagename;
         // uploadpath = path.join(__dirname, '../../temp/public/images/' +  newimagename);        
-        uploadpath = path.join(__dirname, '../../tmp/' +  newimagename);        
+        uploadpath = path.join(__dirname, '/tmp/' +  newimagename);        
 
         imageuploadfile.mv(uploadpath,function(err){
             if(err) return res.status(500).send(`Error isssssssssssssss : ${err}`);
