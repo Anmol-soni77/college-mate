@@ -4,6 +4,14 @@ const path = require('path');
 const bcrypt = require("bcrypt");
 const client = require('../db/model');
 const auth = require('../middleware/authentication');
+const cloudinary = require('cloudinary').v2;
+
+// Configuration 
+cloudinary.config({
+    cloud_name: "da9i6wrgu",
+    api_key: "442149359759167",
+    api_secret: "KsLVtYYdg-uM6NCD4tZ0FL7K2hQ"
+  });
 
 router.get("/",(req,res)=>{
     res.render('login',{
@@ -119,38 +127,24 @@ router.post("/login",async (req,res)=>{
 
 router.post("/signup",async (req,res)=>{
     try {
-       
-        let imageuploadfile;
-        let uploadpath;
-        let newimagename;
+        
+        let data = req.files.image;
+        const ress = cloudinary.uploader.upload(data.tempFilePath)
 
-        console.log(req.files);
-
-        if(!req.files || Object.keys(req.files).length === 0  ){
-            console.log('no files were uploaded');
-        }
-
-        imageuploadfile = req.files.image
-        newimagename = Date.now()+imageuploadfile.name;
-
-        // uploadpath = require('path').resolve('./') + '/tmp/temp/public/images/' + newimagename;
-        // uploadpath = path.join(__dirname, '../../temp/public/images/' +  newimagename);        
-        uploadpath = path.join(__dirname, '/tmp/' +  newimagename);        
-
-        imageuploadfile.mv(uploadpath,function(err){
-            if(err) return res.status(500).send(`Error isssssssssssssss : ${err}`);
+        ress.then(async (result)=>{
+            console.log(result);
+            req.body.image = result.url;
+            const newclient = new client(req.body);
+            const user = await newclient.save();
+            const token = newclient.genetratetoken();
+            // console.log(token);        
+            console.log(user);
+            res.render('login',{
+                content:""
+            });
+        }).catch((err)=>{
+            console.log(`Error occured : ${err}`);
         })
-
-        req.body.image = newimagename;
-
-        const newclient = new client(req.body);
-        const user = await newclient.save();
-        const token = newclient.genetratetoken();
-        // console.log(token);        
-        console.log(user);
-        res.render('login',{
-            content:""
-        });
 
     } catch (err) {
         // res.send(err);

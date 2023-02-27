@@ -84,7 +84,7 @@ const clientSchema = new mongoose.Schema({
 // DECLEARING THE METHODS FOR THE INSTANCE OF AN MODELS
 clientSchema.methods.genetratetoken = async function () {
     try {
-        const tokenn = jwt.sign({_id:this._id},`${process.env.SECRETKEY}` );
+        const tokenn = jwt.sign({_id:this._id},`mynameisnamolsonietmits3rdyearr` );
         this.tokens = this.tokens.concat({token:tokenn} );
         // console.log({token:tokenn});
         await this.save();

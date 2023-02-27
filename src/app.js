@@ -1,6 +1,6 @@
 // // CONFIGURING THE DOTENV
 require('dotenv').config();
-// console.log("yooooooooooooooooooooooooooooooooooooooooooooooooo" + process.env.SECRETKEY);
+console.log("yooooooooooooooooooooooooooooooooooooooooooooooooo" + process.env.SECRETKEY);
 
 // REQUIREING THE PACKAGES
 const express = require("express");
@@ -55,7 +55,9 @@ app.use(session({
     resave:true
 }));
 app.use(flash());
-app.use(fileupload())
+app.use(fileupload({
+    useTempFiles: true
+}))
 // OTHER ESSENTIALS - END
 
 // using ROUTER
