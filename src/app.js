@@ -17,6 +17,10 @@ const session = require('express-session')
 const flash = require('connect-flash')
 // OTHER ESSENTIALS - END
 
+app.use(fileupload({
+    useTempFiles: true
+}))
+
 // FOR BEGING ABLE TO USE "req.cookie.jwt" to get the value of cookie
 app.use(cookieparser());
 
@@ -55,9 +59,6 @@ app.use(session({
     resave:true
 }));
 app.use(flash());
-app.use(fileupload({
-    useTempFiles: true
-}))
 // OTHER ESSENTIALS - END
 
 // using ROUTER
