@@ -21,6 +21,7 @@ const clientSchema = new mongoose.Schema({
         required:"This field is required",
         lowercase:true,
         unique:true,
+        match: /^[^$]+$/,
     },
     email:{
         type:String,
