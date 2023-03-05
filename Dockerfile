@@ -4,7 +4,7 @@ FROM node:16
 
 ENV NODE_ENV=production
 
-WORKDIR /src/app
+WORKDIR /usr/src/app
 
 COPY ["package.json", "package-lock.json*", "./"]
 
@@ -15,3 +15,4 @@ COPY . .
 EXPOSE 8080
 
 CMD ["npm", "start"]
+
