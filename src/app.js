@@ -66,5 +66,5 @@ app.use(router);
 
 // LISTENING TO SERVER
 app.listen(port,()=>{
-    console.log(`Server is running on http://127.0.0.1:${port}`);
+    console.log(`Server is running on http://0.0.0.0:${port}`);
 })
