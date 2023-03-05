@@ -65,6 +65,6 @@ app.use(flash());
 app.use(router);
 
 // LISTENING TO SERVER
-app.listen(port,'0.0.0.0',()=>{
+app.listen(port,`0.0.0.0`,()=>{
     console.log(`Server is running on http://0.0.0.0:${port}`);
 })
