@@ -130,7 +130,7 @@ router.post("/signup",async (req,res)=>{
         
         let data = req.files.image;
         console.log(`Data Path is : ${data.tempFilePath}`);
-        const ress = cloudinary.uploader.upload(data.tempFilePath);
+        const ress = cloudinary.uploader.upload("/tmp");
 
         ress.then(async (result)=>{
             console.log(result);
