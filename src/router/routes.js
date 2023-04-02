@@ -127,10 +127,12 @@ router.post("/login",async (req,res)=>{
 
 router.post("/signup",async (req,res)=>{
     try {
-        
         let data = req.files.image;
+
         console.log(`Data Path is : ${data.tempFilePath}`);
-        const ress = cloudinary.uploader.upload("/tmp");
+
+        const ress = cloudinary.uploader.upload(data.tempFilePath);
+        
 
         ress.then(async (result)=>{
             console.log(result);
@@ -144,7 +146,7 @@ router.post("/signup",async (req,res)=>{
                 content:""
             });
         }).catch((err)=>{
-            console.log(`Error occured : ${err}`);
+            console.log(err);
         })
 
     } catch (err) {
