@@ -171,7 +171,7 @@ router.post("/signup",async (req,res)=>{
 //     }
 // })
 
-router.get("/login",(req,res)=>{
+router.get("/login",(req,res)=>{ 
     res.render('login',{
         content:""
     }) 
