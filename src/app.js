@@ -64,6 +64,9 @@ app.use(flash());
 // using ROUTER
 app.use(router);
 
+let mainroutes = require("./router/routes");
+app.use(mainroutes);
+
 // LISTENING TO SERVER
 app.listen(port,`0.0.0.0`,()=>{
     console.log(`Server is running on http://127.0.0.1:${port}`);
