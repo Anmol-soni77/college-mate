@@ -6,3 +6,5 @@ mongoose.connect(`mongodb+srv://anmol_77Soni:Soniji%4023@cluster0.gp9fjqp.mongod
 }).catch((err)=>{
     console.log(`Error is ${err}`);
 })
+
+require('./model')

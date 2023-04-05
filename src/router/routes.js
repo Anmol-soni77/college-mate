@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt");
 const client = require('../db/model');
 const auth = require('../middleware/authentication');
 const cloudinary = require('cloudinary').v2;
-console.log(`dirictory path is : ${__dirname}`);
 
 // Configuration 
 cloudinary.config({
@@ -121,7 +120,7 @@ router.post("/login",async (req,res)=>{
         }
     } catch (error) {
         res.render('filler',{
-            content:error
+            content: error
         })
     }
 })
@@ -132,7 +131,7 @@ router.post("/signup",async (req,res)=>{
             const user = await newclient.save();
             const token = newclient.genetratetoken();
             // console.log(token);        
-            console.log(user);
+            // console.log(user);
             res.render('login',{
                 content:""
             });
@@ -144,32 +143,6 @@ router.post("/signup",async (req,res)=>{
         });
     }
 })
-
-// router.post("/signup",async (req,res)=>{
-//     try {
-//         let data = req.files.image;
-//         const ress = cloudinary.uploader.upload(data.tempFilePath)
-//         ress.then(async (result)=>{
-//             console.log(result);
-//             req.body.image = result.url;
-//             const newclient = new client(req.body);
-//             const user = await newclient.save();
-//             const token = newclient.genetratetoken();
-//             // console.log(token);        
-//             console.log(user);
-//             res.render('login',{
-//                 content:""
-//             });
-//         }).catch((err)=>{
-//             console.log(`Error occured : ${err}`);
-//         })
-//     } catch (err) {
-//         // res.send(err);
-//         res.render('login',{
-//             content:`Erroorrr is       : ${err}`
-//         });
-//     }
-// })
 
 router.get("/login",(req,res)=>{ 
     res.render('login',{

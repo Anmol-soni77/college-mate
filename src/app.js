@@ -1,6 +1,6 @@
 // // CONFIGURING THE DOTENV
 require('dotenv').config();
-console.log("yooooooooooooooooooooooooooooooooooooooooooooooooo" + process.env.SECRETKEY);
+// console.log("yooooooooooooooooooooooooooooooooooooooooooooooooo" + process.env.SECRETKEY);
 
 // REQUIREING THE PACKAGES
 const express = require("express");
