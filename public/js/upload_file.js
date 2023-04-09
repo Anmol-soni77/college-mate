@@ -14,6 +14,12 @@ const myWidget = cloudinary.createUploadWidget(
       document
         .getElementById("image")
         .setAttribute("value", result.info.secure_url);
+      document
+        .getElementById("upload_widget")
+        .innerHTML = "Re-Upload";
+      document
+        .getElementById("uploaded")
+        .innerHTML = "Your file has been Uploaded";
     }
   }
 );
