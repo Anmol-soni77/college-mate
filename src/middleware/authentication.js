@@ -23,3 +23,5 @@ const auth = async (req,res,next)=>{
 
 
 module.exports = auth ;
+
+require("../db/model");
