@@ -13,7 +13,7 @@
 
 
             
-            <form class="needs-validation" action="/signup" method="post" enctype="multipart/form-data" novalidate>
+            <form class="needs-validation" action="/signup" method="post" enctype="multipart/form-data" >
               <div class="row g-3">
                 <div class="col-sm-6">
                   <label for="name" class="form-label">Name</label>
@@ -35,7 +35,7 @@
                   <label for="username" class="form-label">Username</label>
                   <div class="input-group has-validation">
                     <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                    <input type="text" maxlength="50" minlength="10" class="form-control" name="username" id="username" placeholder="Username" required>
                   <div class="invalid-feedback">
                       Your username is required.
                     </div>
@@ -78,9 +78,9 @@
                   <select class="form-select" id="year" name="year" required>
                     <option value="">Choose...</option>
                     <option>First</option>
-                    <option>Secound</option>
+                    <option>Second</option>
                     <option>third</option>
-                    <option>forth</option>
+                    <option>fourth</option>
                   </select>
                   <div class="invalid-feedback">
                     Please select a valid country.
@@ -239,21 +239,23 @@
 
 
 <div class="col-12">
-  <label for="image" class="form-label">image</label>
+  <label for="image" class="form-label" >Upload your profile picture</label>
   <input
   type="text"
   name="image"
   value=""
   class="form-control"
   id="image"
+  style="display: none;"
   />
-</div>
-  <div class="col-12">
-    <h3
-    id="upload_widget" 
-    class="cloudinary-button">
-    Upload files
+  <br>
+  <h3
+  id="upload_widget" 
+  class="cloudinary-button">
+  Upload files
   </h3>
+  <h5 id="uploaded" style="color:greenyellow;">
+  </h5>
 </div>
 
 <div class="col-12">
@@ -268,7 +270,7 @@
               
 <hr class="my-4">
               
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+          <button class="w-100 btn btn-primary btn-lg" >Continue to checkout</button>
         </form>
       </div>
     </div>
