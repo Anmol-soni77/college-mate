@@ -24,6 +24,17 @@ const myWidget = cloudinary.createUploadWidget(
   }
 );
 
+function myFunction() {
+  const imagetag = document.getElementById("image");
+  let msg="";  
+        
+  if(!imagetag.value) { // or checked
+    msg += "Please upload the image";
+    alert(msg);
+  }
+
+}
+
 document.getElementById("upload_widget").addEventListener(
   "click",
   function () {
@@ -31,3 +42,4 @@ document.getElementById("upload_widget").addEventListener(
   },
   false
 );
+

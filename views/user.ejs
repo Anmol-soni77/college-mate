@@ -1,8 +1,10 @@
 <header>
     <%- include('./partials/navbar') %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
 </header>
 <style>
-
   body{
 
     color:black ;
@@ -12,11 +14,11 @@
 <div class="container yoo" >
       
   <div class="row imagesize d-flex justify-content-center  align-items-center">
-      <div class="col-8 bg-dark rounded col-sm-6 d-flex justify-content-center  col-lg-4 my-3 border ">
+      <div class="col-8 bg-dark bg-opacity-50 rounded col-sm-6 d-flex justify-content-center col-lg-4 my-3 border border-start-0 border-end-0 ">
           <img src="<%- user.image %>" class=" sizing img-fluid" alt="image not available">
       </div>
   </div>
-  <div class="row my-3 border rounded bg-dark text-light m-1 p-2">
+  <div style="font-family: 'Barlow', sans-serif;" class="row my-3 p-3 bg-dark bg-opacity-75 border border-info border-start-0 border-end-0 rounded text-light m-1 p-2">
       <h3>Hello, my name is <%- user.name %> <%- user.last %></h3>
       <div class="col-6">
           <h4 class="te">year : <%- user.year %></h4>

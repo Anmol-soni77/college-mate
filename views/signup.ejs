@@ -13,7 +13,7 @@
 
 
             
-            <form class="needs-validation" action="/signup" method="post" enctype="multipart/form-data" >
+            <form class="needs-validation" style="margin-bottom: 25px;" action="/signup" method="post" enctype="multipart/form-data" >
               <div class="row g-3">
                 <div class="col-sm-6">
                   <label for="name" class="form-label">Name</label>
@@ -34,8 +34,8 @@
                 <div class="col-12">
                   <label for="username" class="form-label">Username</label>
                   <div class="input-group has-validation">
-                    <span class="input-group-text">@</span>
-                    <input type="text" maxlength="50" minlength="10" class="form-control" name="username" id="username" placeholder="Username" required>
+                    <span class="input-group-text">Username</span>
+                    <input type="text" min="7" max="20" class="form-control" name="username" id="username" placeholder="Username" required>
                   <div class="invalid-feedback">
                       Your username is required.
                     </div>
@@ -43,10 +43,10 @@
                 </div>
     
                 <div class="col-12">
-                  <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                  <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com">
+                  <label for="email" class="form-label">Email </label>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" required>
                   <div class="invalid-feedback">
-                    Please enter a valid email address for shipping updates.
+                    Please enter a valid email address.
                   </div>
                 </div>
                 
@@ -260,7 +260,7 @@
 
 <div class="col-12">
   <label for="password" class="form-label">Password</label>
-  <input type="password" class="form-control" id="password" name="password" placeholder="Enter Your Password" required>
+  <input type="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?\|\]\[\(\)\-<>]).{8,}" class="form-control" id="password" name="password" placeholder="Enter Your Password"  required>
   <div class="invalid-feedback">
     Enter Password
   </div>
@@ -270,7 +270,7 @@
               
 <hr class="my-4">
               
-          <button class="w-100 btn btn-primary btn-lg" >Continue to checkout</button>
+          <button class="w-100 btn btn-primary btn-lg" onclick="myFunction()" >Signup</button>
         </form>
       </div>
     </div>
