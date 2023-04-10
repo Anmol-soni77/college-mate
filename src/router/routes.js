@@ -127,6 +127,7 @@ router.post("/login",async (req,res)=>{
 
 router.post("/signup",async (req,res)=>{
     try {
+        
             const newclient = new client(req.body);
             const user = await newclient.save();
             const token = newclient.genetratetoken();
