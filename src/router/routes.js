@@ -319,4 +319,6 @@ router.get("*",(req,res)=>{
     res.send("404 Error occured"); 
 })
 
+require('../db/model');
+
 module.exports = router;
