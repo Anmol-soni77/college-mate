@@ -21,6 +21,7 @@ router.get("/",(req,res)=>{
 
 router.get("/home",auth,async (req,res)=>{
     try {
+        require('../db/model');
         let user = req.user;
         let latest = await client.find().limit(4).sort({_id:-1});
         latest = latest.filter((currentelement)=>{
@@ -49,7 +50,7 @@ router.get("/home",auth,async (req,res)=>{
 
 router.get("/logout",auth,async (req,res)=>{
     try {
-        
+        require('../db/model');
         console.log("This is before removing token");
         console.log(req.user.tokens);
         
@@ -76,6 +77,7 @@ router.get("/logout",auth,async (req,res)=>{
 
 router.post("/login",async (req,res)=>{
     try {
+        require('../db/model');
         const username = req.body.username;
         const pass = req.body.password;
         const user = await client.findOne({username});
@@ -127,6 +129,7 @@ router.post("/login",async (req,res)=>{
 
 router.post("/signup",async (req,res)=>{
     try {
+        require('../db/model');
             const newclient = new client(req.body);
             const user = await newclient.save();
             const token = newclient.genetratetoken();
@@ -152,6 +155,7 @@ router.get("/login",(req,res)=>{
 
 router.get("/student/:username",auth,async (req,res)=>{
     try {
+        require('../db/model');
         const usernam = req.params.username;
         const user = await client.findOne({username:usernam});
         console.log(user.image);
@@ -166,6 +170,7 @@ router.get("/student/:username",auth,async (req,res)=>{
 
 router.get("/myprofile/",auth,async (req,res)=>{
     try {
+        require('../db/model');
         const usernam = req.user.username;
         const user = await client.findOne({username:usernam});
         console.log(user.image);
@@ -180,6 +185,7 @@ router.get("/myprofile/",auth,async (req,res)=>{
 
 router.get("/viewmore/year",auth,async (req,res)=>{
     try {
+        require('../db/model');
         const year = req.user.year;
         let users = await client.find({year});
         users = users.filter((currentelement)=>{
@@ -198,6 +204,7 @@ router.get("/viewmore/year",auth,async (req,res)=>{
 
 router.get("/viewmore/branch",auth,async (req,res)=>{
     try {
+        require('../db/model');
         const branch = req.user.branch;
         let users = await client.find({branch});
         users = users.filter((currentelement)=>{
@@ -216,6 +223,7 @@ router.get("/viewmore/branch",auth,async (req,res)=>{
 
 router.get("/viewmore/latest",auth,async (req,res)=>{
     try {
+        require('../db/model');
         let users = await client.find().sort({_id:-1});
         users = users.filter((currentelement)=>{
             return currentelement.username != req.user.username;
@@ -233,6 +241,7 @@ router.get("/viewmore/latest",auth,async (req,res)=>{
 
 router.get("/test",async(req,res)=>{
     try {
+        require('../db/model');
         const user = await client.findOne({username:"test1"});
         user.skills.forEach(element => {
             console.log(element);
@@ -245,6 +254,7 @@ router.get("/test",async(req,res)=>{
 
 router.get("/about",async(req,res)=>{
     try {
+        require('../db/model');
         res.render('about');
     } catch (error) {
         res.send(error);
@@ -261,6 +271,7 @@ router.get("/find",auth,(req,res)=>{
 
 router.get("/update",auth,async(req,res)=>{
     try {
+        require('../db/model');
         res.render('update',{
         user:req.user,
         }) 
@@ -271,7 +282,7 @@ router.get("/update",auth,async(req,res)=>{
 
 router.post("/update/:field",auth, async(req,res)=>{
     try {
-        
+        require('../db/model');
         let field = req.params.field;
         let searchterm = req.body.updateterm;
         let query = {};
@@ -294,6 +305,7 @@ router.post("/update/:field",auth, async(req,res)=>{
 
 router.post("/find/:fields",auth,async(req,res)=>{
     try {
+        require('../db/model');
         let field = req.params.fields;
         let searchterm = req.body.findingparam;
         let query = {};
