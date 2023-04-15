@@ -82,7 +82,7 @@ router.post("/login",async (req,res)=>{
         const pass = req.body.password;
         const user = await client.findOne({username});
 
-        if (user.password == null) {
+        if (user == null ) {
             res.status(500).render('login',{
                 content:"Password or email does'nt match"
             })
@@ -355,8 +355,7 @@ router.post("/find/:fields",auth,async(req,res)=>{
 
 router.get("*",(req,res)=>{
     res.render('filler',{
-        content:`${error}
-        Connection error Occured ,
+        content:`Connection error Occured ,
         Go back and try again`
     }); 
 })
