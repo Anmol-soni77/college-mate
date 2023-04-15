@@ -9,4 +9,5 @@ mongoose.connect(`mongodb+srv://anmol_77Soni:Soniji%4023@cluster0.gp9fjqp.mongod
     console.log(`Error is ${err}`);
 })
 
-require('./model');
+require('./model'); 
+
