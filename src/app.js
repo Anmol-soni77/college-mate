@@ -61,11 +61,11 @@ app.use(session({
 app.use(flash());
 // OTHER ESSENTIALS - END
 
-// using ROUTER
-app.use(router);
-
 let mainroutes = require("./router/routes");
 app.use(mainroutes);
+
+// using ROUTER
+app.use(router);
 
 // LISTENING TO SERVER
 app.listen(port,`0.0.0.0`,()=>{

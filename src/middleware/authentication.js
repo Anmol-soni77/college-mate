@@ -1,6 +1,7 @@
 const cookieparser = require('cookie-parser');
 const jwt = require("jsonwebtoken");
 const client = require('../db/model');
+require("../db/model");
 
 const auth = async (req,res,next)=>{
     try {
@@ -21,7 +22,4 @@ const auth = async (req,res,next)=>{
     }
 }
 
-
 module.exports = auth ;
-
-require("../db/model");
