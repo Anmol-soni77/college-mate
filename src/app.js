@@ -61,8 +61,8 @@ app.use(session({
 app.use(flash());
 // OTHER ESSENTIALS - END
 
-let mainroutes = require("./router/routes");
-app.use(mainroutes);
+// let mainroutes = require("./router/routes");
+// app.use(mainroutes);
 
 // using ROUTER
 app.use(router);

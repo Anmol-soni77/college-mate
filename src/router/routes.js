@@ -6,6 +6,8 @@ const client = require('../db/model');
 const auth = require('../middleware/authentication');
 const cloudinary = require('cloudinary').v2;
 
+require("../db/connection");
+
 // Configuration 
 cloudinary.config({
     cloud_name: "da9i6wrgu",
