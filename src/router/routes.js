@@ -81,6 +81,12 @@ router.post("/login",async (req,res)=>{
         const username = req.body.username;
         const pass = req.body.password;
         const user = await client.findOne({username});
+
+        if (user.password == null) {
+            res.status(500).render('login',{
+                content:"Password or email does'nt match"
+            })
+        }
         
         const is_bpass_corr = await bcrypt.compare(pass,user.password); 
 
