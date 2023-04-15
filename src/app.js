@@ -11,11 +11,15 @@ const expresslayouts = require("express-ejs-layouts");
 const router = require("./router/routes");
 const cookieparser = require('cookie-parser');
 
+// EXECUTING THE CONNECTION FILES
+require("./db/connection");
+
 // OTHER ESSENTIALS - START
 const fileupload = require('express-fileupload')
 const session = require('express-session')
 const flash = require('connect-flash')
 // OTHER ESSENTIALS - END
+
 
 app.use(fileupload({
     useTempFiles: true
@@ -59,11 +63,9 @@ app.use(session({
 app.use(flash());
 // OTHER ESSENTIALS - END
 
-let mainroutes = require("./router/routes");
-app.use(mainroutes);
+// let mainroutes = require("./router/routes");
+// app.use(mainroutes);
 
-// EXECUTING THE CONNECTION FILES
-require("./db/connection");
 
 // using ROUTER
 app.use(router);
