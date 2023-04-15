@@ -28,8 +28,6 @@ app.use(cookieparser());
 app.use(express.urlencoded({ extended: true }));  //body-parser extracts the entire body portion of an incoming request stream and exposes it on req.body.
 app.use(express.json());
 
-// EXECUTING THE CONNECTION FILES
-require("./db/connection");
 
 // REQUIRING THE MODEL
 const client = require('./db/model');
@@ -61,8 +59,11 @@ app.use(session({
 app.use(flash());
 // OTHER ESSENTIALS - END
 
-// let mainroutes = require("./router/routes");
-// app.use(mainroutes);
+let mainroutes = require("./router/routes");
+app.use(mainroutes);
+
+// EXECUTING THE CONNECTION FILES
+require("./db/connection");
 
 // using ROUTER
 app.use(router);
