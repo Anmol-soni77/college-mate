@@ -70,7 +70,7 @@ router.get("/logout",auth,async (req,res)=>{
         });
     } catch (error) {
         // res.render(error)
-        res.render('login',{
+        res.render('filler',{
             content:""
         });
     }
@@ -122,7 +122,9 @@ router.post("/login",async (req,res)=>{
         }
     } catch (error) {
         res.render('filler',{
-            content: error
+            content: `${error},
+            Connection error Occured ,
+            Go back and try again`
         })
     }
 })
@@ -140,8 +142,10 @@ router.post("/signup",async (req,res)=>{
 
     } catch (err) {
         // res.send(err);
-        res.render('login',{
-            content:`Erroorrr is       : ${err}`
+        res.render('filler',{
+            content:`${err}
+            Connection error Occured ,
+            Go back and try again`
         });
     }
 })
@@ -162,7 +166,11 @@ router.get("/student/:username",auth,async (req,res)=>{
         }) 
     } catch (error) {
         // res.send(error)
-        res.render('login');
+        res.render('filler',{
+            content:`${error}
+            Connection error Occured ,
+            Go back and try again`
+        });
     }
 })
 
@@ -176,7 +184,11 @@ router.get("/myprofile/",auth,async (req,res)=>{
         }) 
     } catch (error) {
         // res.send(error)
-        res.render('login');
+        res.render('filler',{
+            content:`${error}
+            Connection error Occured ,
+            Go back and try again`
+        });
     }
 })
 
@@ -193,7 +205,9 @@ router.get("/viewmore/year",auth,async (req,res)=>{
     } catch (error) {
         // res.send(error)
         res.render('filler',{
-            content:error
+            content:`${error}
+            Connection error Occured ,
+            Go back and try again`
         });
     }
 })
@@ -211,7 +225,9 @@ router.get("/viewmore/branch",auth,async (req,res)=>{
     } catch (error) {
         // res.send(error)
         res.render('filler',{
-            content:error
+            content:`${error}
+            Connection error Occured ,
+            Go back and try again`
         });
     }
 })
@@ -228,7 +244,9 @@ router.get("/viewmore/latest",auth,async (req,res)=>{
     } catch (error) {
         // res.send(error)
         res.render('filler',{
-            content:error
+            content:`${error}
+            Connection error Occured ,
+            Go back and try again`
         });
     }
 })
@@ -249,7 +267,11 @@ router.get("/about",async(req,res)=>{
     try {
         res.render('about');
     } catch (error) {
-        res.send(error);
+        res.render('filler',{
+            content:`${error}
+            Connection error Occured ,
+            Go back and try again`
+        });
     }
 })
 
@@ -290,7 +312,11 @@ router.post("/update/:field",auth, async(req,res)=>{
 
     } catch (error) {
         console.log(error);
-        res.send(error);
+        res.render('filler',{
+            content:`${error}
+            Connection error Occured ,
+            Go back and try again`
+        });
     }
 })
 
@@ -313,12 +339,20 @@ router.post("/find/:fields",auth,async(req,res)=>{
         
     } catch (error) {
         // res.status(500).send(error);
-        res.render('login');
+        res.render('filler',{
+            content:`${error}
+            Connection error Occured ,
+            Go back and try again`
+        });
     }
 })
 
 router.get("*",(req,res)=>{
-    res.send("404 Error occured"); 
+    res.render('filler',{
+        content:`${error}
+        Connection error Occured ,
+        Go back and try again`
+    }); 
 })
 
 module.exports = router;
