@@ -1,7 +1,7 @@
 const cookieparser = require('cookie-parser');
 const jwt = require("jsonwebtoken");
 const client = require('../db/model');
-require("../db/model");
+require("../db/connection");
 
 const auth = async (req,res,next)=>{
     try {
@@ -16,7 +16,7 @@ const auth = async (req,res,next)=>{
 
         next();
     } catch (error) {
-        res.status(401).render('login',{
+        res.status(401).render('filler',{
             content:error
         });
     }
