@@ -83,7 +83,7 @@ router.post("/login",async (req,res)=>{
         const user = await client.findOne({username});
 
         if (user == null ) {
-            res.status(500).render('login',{
+            res.render('login',{
                 content:"Password or email does'nt match"
             })
         }
@@ -129,8 +129,7 @@ router.post("/login",async (req,res)=>{
     } catch (error) {
         res.render('filler',{
             content: `${error},
-            Connection error Occured ,
-            Go back and try again`
+            Do you want to continue with your actions?`
         })
     }
 })
@@ -150,8 +149,7 @@ router.post("/signup",async (req,res)=>{
         // res.send(err);
         res.render('filler',{
             content:`${err}
-            Connection error Occured ,
-            Go back and try again`
+            Do you want to continue with your actions?`
         });
     }
 })
@@ -174,8 +172,7 @@ router.get("/student/:username",auth,async (req,res)=>{
         // res.send(error)
         res.render('filler',{
             content:`${error}
-            Connection error Occured ,
-            Go back and try again`
+            Do you want to continue with your actions?`
         });
     }
 })
@@ -192,8 +189,7 @@ router.get("/myprofile/",auth,async (req,res)=>{
         // res.send(error)
         res.render('filler',{
             content:`${error}
-            Connection error Occured ,
-            Go back and try again`
+            Do you want to continue with your actions?`
         });
     }
 })
@@ -212,8 +208,7 @@ router.get("/viewmore/year",auth,async (req,res)=>{
         // res.send(error)
         res.render('filler',{
             content:`${error}
-            Connection error Occured ,
-            Go back and try again`
+            Do you want to continue with your actions?`
         });
     }
 })
@@ -232,8 +227,7 @@ router.get("/viewmore/branch",auth,async (req,res)=>{
         // res.send(error)
         res.render('filler',{
             content:`${error}
-            Connection error Occured ,
-            Go back and try again`
+            Do you want to continue with your actions?`
         });
     }
 })
@@ -251,23 +245,11 @@ router.get("/viewmore/latest",auth,async (req,res)=>{
         // res.send(error)
         res.render('filler',{
             content:`${error}
-            Connection error Occured ,
-            Go back and try again`
+            Do you want to continue with your actions?`
         });
     }
 })
 
-router.get("/test",async(req,res)=>{
-    try {
-        const user = await client.findOne({username:"test1"});
-        user.skills.forEach(element => {
-            console.log(element);
-        });
-        res.send(user.skills)
-    } catch (error) {
-        res.send(error);
-    }
-})
 
 router.get("/about",async(req,res)=>{
     try {
@@ -275,8 +257,7 @@ router.get("/about",async(req,res)=>{
     } catch (error) {
         res.render('filler',{
             content:`${error}
-            Connection error Occured ,
-            Go back and try again`
+            Do you want to continue with your actions?`
         });
     }
 })
@@ -292,7 +273,7 @@ router.get("/find",auth,(req,res)=>{
 router.get("/update",auth,async(req,res)=>{
     try {
         res.render('update',{
-        user:req.user,
+            user:req.user,
         }) 
     } catch (error) {
         res.render('login');
@@ -313,15 +294,14 @@ router.post("/update/:field",auth, async(req,res)=>{
         // console.log(`Update hua ya nahi ? :`);
         console.log(updateuser);
         res.render('update',{
-        user:req.user,
+            user:req.user,
         }) 
-
+        
     } catch (error) {
         console.log(error);
         res.render('filler',{
             content:`${error}
-            Connection error Occured ,
-            Go back and try again`
+            Do you want to continue with your actions?`
         });
     }
 })
@@ -346,18 +326,36 @@ router.post("/find/:fields",auth,async(req,res)=>{
     } catch (error) {
         // res.status(500).send(error);
         res.render('filler',{
-            content:`${error}
-            Connection error Occured ,
-            Go back and try again`
+            content:`${error} \n
+            Do you want to continue with your actions?`
         });
     }
 })
+
+
+router.get("/test",async(req,res)=>{
+    try {
+        const user = await client.findOne({username:"test1"});
+        user.skills.forEach(element => {
+            console.log(element);
+        });
+        res.send(user.skills)
+    } catch (error) {
+        res.send(error);
+    }
+});
+
+router.get("/error",async(req,res)=>{
+    res.render('filler',{
+        content:`Do you want to continue with your actions? `
+    }); 
+});
 
 router.get("*",(req,res)=>{
     res.render('filler',{
         content:`Connection error Occured ,
         Go back and try again`
     }); 
-})
+});
 
 module.exports = router;
