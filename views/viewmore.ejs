@@ -13,15 +13,10 @@
               <img src="<%- element.image %>" class="card-img-top"  height="120px" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><%- element.username %></h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Hey, It's <%- element.name %> , I am from  <%- element.college %> to know more about me check out my profile.</p>
               </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item bg-dark text-light ">An item</li>
-                <li class="list-group-item bg-dark text-light ">A second item</li>
-                <li class="list-group-item bg-dark text-light ">A third item</li>
-              </ul>
               <div class="card-body">
-                  <a href="/student/<%- element.username %>">View</a>
+                  <a href="/student/<%- element.username %>"><button class="btn btn-outline-primary"> View profile </button> </a>
               </div>
             </div>
             <% } %>
