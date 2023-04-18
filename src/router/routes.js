@@ -128,8 +128,7 @@ router.post("/login",async (req,res)=>{
         }
     } catch (error) {
         res.render('filler',{
-            content: `${error},
-            Do you want to continue with your actions?`
+            content: `Do you want to continue with your actions?`
         })
     }
 })
@@ -148,8 +147,7 @@ router.post("/signup",async (req,res)=>{
     } catch (err) {
         // res.send(err);
         res.render('filler',{
-            content:`${err}
-            Do you want to continue with your actions?`
+            content:`Do you want to continue with your actions?`
         });
     }
 })
@@ -171,8 +169,7 @@ router.get("/student/:username",auth,async (req,res)=>{
     } catch (error) {
         // res.send(error)
         res.render('filler',{
-            content:`${error}
-            Do you want to continue with your actions?`
+            content:`Do you want to continue with your actions?`
         });
     }
 })
@@ -188,8 +185,7 @@ router.get("/myprofile/",auth,async (req,res)=>{
     } catch (error) {
         // res.send(error)
         res.render('filler',{
-            content:`${error}
-            Do you want to continue with your actions?`
+            content:`Do you want to continue with your actions?`
         });
     }
 })
@@ -207,8 +203,7 @@ router.get("/viewmore/year",auth,async (req,res)=>{
     } catch (error) {
         // res.send(error)
         res.render('filler',{
-            content:`${error}
-            Do you want to continue with your actions?`
+            content:`Do you want to continue with your actions?`
         });
     }
 })
@@ -226,8 +221,7 @@ router.get("/viewmore/branch",auth,async (req,res)=>{
     } catch (error) {
         // res.send(error)
         res.render('filler',{
-            content:`${error}
-            Do you want to continue with your actions?`
+            content:`Do you want to continue with your actions?`
         });
     }
 })
@@ -244,8 +238,7 @@ router.get("/viewmore/latest",auth,async (req,res)=>{
     } catch (error) {
         // res.send(error)
         res.render('filler',{
-            content:`${error}
-            Do you want to continue with your actions?`
+            content:`Do you want to continue with your actions?`
         });
     }
 })
@@ -256,8 +249,7 @@ router.get("/about",async(req,res)=>{
         res.render('about');
     } catch (error) {
         res.render('filler',{
-            content:`${error}
-            Do you want to continue with your actions?`
+            content:`Do you want to continue with your actions?`
         });
     }
 })
@@ -300,8 +292,7 @@ router.post("/update/:field",auth, async(req,res)=>{
     } catch (error) {
         console.log(error);
         res.render('filler',{
-            content:`${error}
-            Do you want to continue with your actions?`
+            content:`Do you want to continue with your actions?`
         });
     }
 })
@@ -326,8 +317,7 @@ router.post("/find/:fields",auth,async(req,res)=>{
     } catch (error) {
         // res.status(500).send(error);
         res.render('filler',{
-            content:`${error} \n
-            Do you want to continue with your actions?`
+            content:`Do you want to continue with your actions?`
         });
     }
 })
@@ -347,7 +337,7 @@ router.get("/test",async(req,res)=>{
 
 router.get("/error",async(req,res)=>{
     res.render('filler',{
-        content:`Do you want to continue with your actions? `
+        content: `Do you want to continue with your actions? `
     }); 
 });
 
