@@ -1,5 +1,5 @@
     <%- include('./partials/navbar2') %>
-    <div class="container">
+    <div class="container text-white">
       <main>
         <div class="py-5 text-center">
           <!-- <img class="d-block mx-auto mb-4" src="./css/bootstrap-logo.svg" alt="" width="72" height="57"> -->
@@ -29,9 +29,10 @@
     
                 <div class="col-12">
                   <label for="username" class="form-label">Username</label>
-                  <div class="input-group has-validation">
+                  <br><small class="text-dark">Warning : length of username should be between 7-20 lettters</small>
+                  <div class="input-group has-validation my-3">
                     <span class="input-group-text">Username</span>
-                    <input type="text" min="7" max="20" class="form-control" name="username" id="username" placeholder="Username" required>
+                    <input type="text" min="7" max="20" class="form-control " name="username" id="username" placeholder="Username" required>
                   <div class="invalid-feedback">
                       Your username is required.
                     </div>
@@ -106,9 +107,7 @@
                 <br>
 <!--     ------------------------------------------------------- -->
 <div class="col-12">
-  <label for="sports" class="form-label">sports</label>
-  <br><small>Ex: athletics</small>
-  
+  <label for="sports" class="form-label">sports</label>  
   <div class="ingridientslist">
     <div class="ingridientsdiv col-md-5 my-2 ">
       <select class="form-select" id="sports" name="sports" required>
@@ -258,7 +257,10 @@
 
 <div class="col-12">
   <label for="password" class="form-label">Password</label>
-  <input type="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?\|\]\[\(\)\-<>]).{8,}" class="form-control" id="password" name="password" placeholder="Enter Your Password"  required>
+  <br><small class="text-danger">Warning : A combination of capital letters, tiny letters, special characters, and numerical characters should be included for your password.
+  </small>
+  <br><small class="text-dark" >Ex : Bravo@123 </small>
+  <input type="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?\|\]\[\(\)\-<>]).{8,}" class="form-control my-2" id="password" name="password" placeholder="Enter Your Password"  required>
   <div class="invalid-feedback">
     Enter Password
   </div>
