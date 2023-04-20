@@ -112,7 +112,7 @@ router.post("/login",async (req,res)=>{
 
         if (is_bpass_corr) {
             res.cookie("jwt",token,{
-                expires: new Date(Date.now()+ 1800000),
+                expires: new Date(Date.now()+ 7200000),
                 httpOnly:true,
             });
             res.render('home',{
@@ -179,7 +179,7 @@ router.get("/myprofile/",auth,async (req,res)=>{
         const usernam = req.user.username;
         const user = await client.findOne({username:usernam});
         console.log(user.image);
-        res.render('user',{
+        res.render('my_profile',{
             user,
         }) 
     } catch (error) {
