@@ -1,5 +1,55 @@
 <%- include('./partials/navbar') %>
 
-<div class="container yoo">
-    <h3>This is about page</h3>
+<div class="container yoo text-white" style="padding-bottom: 12px;">
+    <hr style="color:white;">
+    <h3 style="padding-left: 12px;">About</h3>  
+    <hr style="color:white;">
+    <p style="font-size: 25px; padding: 10px;">
+        This website tells you about the people of same interest ans lets you interact with them .
+        You can also find the person with specific interest or with particular branch or year.
+        This web-app's aim is to make it easier for others to find the person with specific details.
+    </p>
+    
+<hr style="color:white;">
+<h3 style="padding-left: 12px;">Features</h3>
+<hr style="color:white;">
+
+    <div class="row" style="padding: 25px;">
+        <div class="col-4">
+          <div class="list-group"  id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action active" id="profile-list" data-bs-toggle="list" href="#profile" role="tab" aria-controls="profile">Make profile</a>
+              <a class="list-group-item list-group-item-action" id="update-list" data-bs-toggle="list" href="#update" role="tab" aria-controls="update">Update profile</a>
+            <a class="list-group-item list-group-item-action" id="find-list" data-bs-toggle="list" href="#find" role="tab" aria-controls="find">Find </a>
+            <a class="list-group-item list-group-item-action" id="explore-list" data-bs-toggle="list" href="#explore" role="tab" aria-controls="explore">Explore</a>
+            <a class="list-group-item list-group-item-action" id="send-list" data-bs-toggle="list" href="#send" role="tab" aria-controls="send">Send mail</a>
+            <a class="list-group-item list-group-item-action" id="view-list" data-bs-toggle="list" href="#view" role="tab" aria-controls="view">View profile</a>
+            <a class="list-group-item list-group-item-action" id="login-list" data-bs-toggle="list" href="#login" role="tab" aria-controls="login">Login/Logout</a>
+          </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" style="font-size: 25px; padding: 25px;" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-list">Sign up with the specific details</div>
+                <div class="tab-pane fade" id="update" role="tabpanel" aria-labelledby="update-list">Update the specific field of your profile and keep it up to date</div>
+                <div class="tab-pane fade" id="find" role="tabpanel" aria-labelledby="find-list">Find the person with specific details by the help of find page of this website</div>
+                <div class="tab-pane fade" id="explore" role="tabpanel" aria-labelledby="explore-list">Explore other peoples profile with the help of home page</div>
+            <div class="tab-pane fade" id="send" role="tabpanel" aria-labelledby="send-list">Send mail to your friends by visiting their profile</div>
+            <div class="tab-pane fade" id="view" role="tabpanel" aria-labelledby="view-list">View your profile and see what other sees</div>
+            <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-list">Login/Logout anytime with the help of your private username and paasword and don't share it with anyone.</div>
+        </div>
+    </div>
+</div>
+    
+      
+<hr style="color:white;">
+<h3 style="padding-left: 12px;">Credits</h3>
+<hr style="color:white;">
+    <div class="row ">
+        <div class="col-6 align-items-center justify-content-center">
+            <h4 class="text-center">Made by</h4>
+            <h3 class="text-center">Anmol Soni</h3>
+        </div>
+        <div class="col-6"></div>
+    </div>
+</main>
+
 </div>

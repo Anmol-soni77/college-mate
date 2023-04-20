@@ -122,7 +122,7 @@ router.post("/login",async (req,res)=>{
             })
         }
         else{
-            res.status(500).render('login',{
+            res.render('login',{
                 content:"Password or email does'nt match"
             })
         }
